@@ -1,0 +1,14 @@
+# python web 框架
+pip install flask
+# 数据库ORM库
+pip install flask-sqlalchemy
+# bootstrap模板库
+pip install flask-bootstrap
+# 通过类实现表单
+pip install flask-wtf
+# 监控数据库模式变化，并把变化同步到数据中
+pip install flask-migrate
+# 用户登录模块，可记住用户
+pip install flask-login
+# WTForms从2.3.0开始email的验证由外部库去处理（为什么不处理成依赖？）
+pip install wtforms[email]
