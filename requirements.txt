@@ -12,3 +12,16 @@ pip install flask-migrate
 pip install flask-login
 # WTForms从2.3.0开始email的验证由外部库去处理（为什么不处理成依赖？）
 pip install wtforms[email]
+# 发送电子邮件，他附带安装blinker，是一个简单的调度系统，允许任何数量的相关方订阅事件
+pip install flask-mail
+# 生成JSON Web令牌，用于密码重置链接
+pip install pyjwt
+# 读取环境变量
+pip install python-dotenv
+pip install flask-dotenv
+# 处理日期时间与时区的问题，该扩展将moment.js合并到应用中
+pip install flask-moment
+# 翻译
+pip install flask-babel
+# 语言检测库
+pip install guess-language_spirit

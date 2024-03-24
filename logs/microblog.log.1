@@ -1,0 +1,120 @@
+2024-03-21 14:33:35,591 ERROR: Exception on / [GET] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 32, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False).items
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Query.paginate() takes 1 positional argument but 4 were given
+2024-03-21 14:35:13,241 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:35:15,479 ERROR: Exception on / [GET] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 32, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Query.paginate() takes 1 positional argument but 4 were given
+2024-03-21 14:40:38,228 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:47:22,848 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 15:08:26,602 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 15:38:55,884 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 15:41:01,170 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 15:48:53,422 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 15:49:14,551 ERROR: Exception on /user/mike [GET] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 84, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+                                                                     ^^^^
+NameError: name 'page' is not defined
+2024-03-21 15:50:37,685 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-22 15:16:21,137 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:17:50,808 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:22:10,740 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:24:42,280 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:32:34,444 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:49:56,499 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 15:52:37,244 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 16:12:46,135 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:35]
+2024-03-22 16:44:06,367 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:37]
+2024-03-22 16:47:39,907 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:37]
+2024-03-22 17:17:58,895 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 17:34:30,676 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 17:34:44,586 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 17:59:45,926 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 20:19:41,637 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 20:19:52,134 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 21:41:29,091 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 21:43:35,290 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-22 22:46:50,775 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:16:53,719 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:18:10,058 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:18:52,406 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:19:18,406 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:19:49,621 ERROR: Exception on / [POST] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 36, in index
+    language = guess_language(form.post.data)
+               ^^^^^^^^^^^^^^
+NameError: name 'guess_language' is not defined
+2024-03-23 10:27:32,404 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:29:44,942 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 10:33:16,522 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 12:29:09,428 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]
+2024-03-23 12:59:08,343 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:40]

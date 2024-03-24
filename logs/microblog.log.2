@@ -1,0 +1,129 @@
+2024-03-21 10:34:17,243 ERROR: Exception on / [POST] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.ProgrammingError: Error binding parameter 1: type 'dict' is not supported
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 28, in index
+    db.session.commit()
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 598, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4447, in _flush
+    with util.safe_reraise():
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1227, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 517, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2344, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 1: type 'dict' is not supported
+[SQL: INSERT INTO post (body, timestamp, user_id) VALUES (?, ?, ?)]
+[parameters: ({'post': 'My Lord.', 'submit': True, 'csrf_token': 'IjMwMmVjYjkwMTU2M2ZlY2VlYjJlN2U5M2MwZjRhYjQ5YzgxZTcxYzki.ZfucWg.z-FRqtHxHXicAuV4m10Z2bTVY3o'}, '2024-03-21 02:34:17.242817', 2)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-03-21 10:36:32,188 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 10:57:53,626 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 10:58:22,083 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:14:26,037 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:16:20,578 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:16:42,817 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:19:20,366 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:27:50,611 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:28:35,105 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:29:37,084 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:31:58,702 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:32:44,861 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:40:26,934 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:40:46,390 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:41:53,046 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:46:00,752 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 11:46:09,531 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:12:44,854 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:21:49,564 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:24:54,711 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:32:12,160 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
+2024-03-21 14:32:16,589 ERROR: Exception on / [GET] [in /data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py:828]
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/storage/emulated/0/Acode/microblog/app/routes.py", line 32, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POST_PER_PAGE'], False).items
+                                                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'POST_PER_PAGE'
+2024-03-21 14:33:33,587 INFO: Microblog startup [in /storage/emulated/0/Acode/microblog/app/__init__.py:31]
